@@ -1,0 +1,68 @@
+/* RESET STYLE */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Poppins", sans-serif;
+}
+
+/* CSS VARIABLES */
+:root {
+	--color-primary: #539ebc;
+	--color-secondary: #ff9c41;
+	--color-accent: #7000ff;
+	--color-bg: #f1f6fa;
+	--color-light-grey: #777;
+}
+
+/* IMPORTS */
+@import url("utilities.css");
+
+/* ==========================================
+                   NAVBAR START 
+=============================================*/
+#main-navbar .nav-item {
+	margin: 0 10px;
+}
+#main-navbar .nav-link {
+	font-weight: 500;
+}
+@media screen and (max-width: 576px) {
+	#main-navbar {
+		display: none;
+	}
+}
+/* ==========================================
+                   NAVBAR END 
+=============================================*/
+
+/* ==========================================
+                   FOOTER START
+=============================================*/
+#main-footer {
+	color: var(--color-light-grey);
+	text-align: center;
+	padding: 10px;
+	position: relative;
+}
+#main-footer::before {
+	content: "";
+	background-color: var(--color-light-grey);
+	height: 1px;
+	width: 80%;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+}
+/* ==========================================
+                   FOOTER END
+=============================================*/
+
+/* UTILITY CLASSES */
+.text-14 {
+	font-size: 14px;
+}
