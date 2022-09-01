@@ -29,3 +29,16 @@ mobileBackBtn.forEach((element) => {
 		window.history.back();
 	});
 });
+
+// BODY BACKGROUDN COLOR CHANGE
+let mainBox = document.querySelector(".main-box");
+
+if (window.innerWidth <= 576) {
+	if (
+		window.getComputedStyle(mainBox).backgroundColor === "rgb(255, 255, 255)"
+	) {
+		document.body.style.backgroundColor = "rgb(255, 255, 255)";
+	}
+}
+
+// window.addEventListener('')

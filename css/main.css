@@ -26,7 +26,7 @@ input,
 	--color-accent: #7000ff;
 	--color-accent-2: #01c1b6;
 	--color-bg: #f1f6fa;
-	--color-light-grey: #777;
+	--color-light-grey: #808080;
 }
 
 /* IMPORTS */
@@ -72,6 +72,65 @@ input,
 /* ==========================================
                    FOOTER END
 =============================================*/
+
+/* Mobile Auth Page Start */
+.mobile-auth {
+	min-width: 800px;
+}
+.mobile-auth > div {
+	min-height: 300px;
+}
+.mobile-auth-fild {
+	margin: 10px 0;
+	max-width: 380px;
+}
+.mobile-auth-fild img {
+	height: 15px;
+	border-radius: 3px;
+}
+.mobile-auth-fild input {
+	color: var(--color-light-grey);
+	border-radius: 20px;
+	box-shadow: 0px -3px 4px rgba(0, 0, 0, 0.09), 0px 6px 15px rgba(0, 0, 0, 0.09) !important;
+	padding: 10px 30px;
+}
+.mobile-auth-fild span {
+	color: var(--color-light-grey);
+	background-color: #fff;
+	border-radius: 30px;
+	box-shadow: 0px -3px 4px rgba(0, 0, 0, 0.09), 0px 6px 15px rgba(0, 0, 0, 0.09) !important;
+	padding: 10px 20px;
+}
+@media screen and (max-width: 1012px) {
+	.mobile-auth {
+		min-width: 700px;
+	}
+}
+@media screen and (max-width: 785px) {
+	.mobile-auth {
+		min-width: 600px;
+	}
+}
+@media screen and (max-width: 644px) {
+	.mobile-auth {
+		min-width: 500px;
+	}
+	.mobile-auth > div {
+		min-height: 300px;
+	}
+}
+@media screen and (max-width: 576px) {
+	.mobile-auth {
+		min-width: 100%;
+	}
+	.mobile-auth-fild input {
+		padding: 8px 15px;
+	}
+	.mobile-auth-fild span {
+		padding: 8px 10px;
+	}
+}
+/* Mobile Auth Page End */
 
 /* Mian Contnt Box */
 .main-box {
