@@ -19,6 +19,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
 
+    <!-- CUSTOM JS FILE -->
+    <script defer src="js/main.js"></script>
+
     <!-- CUSTOM CSS FILE -->
     <link rel="stylesheet" href="css/main.css">
 </head>
@@ -53,6 +56,80 @@
         </div>
     </nav>
     <!---------------------- NAVBAR END --------------------->
+
+    <main>
+        <section class="main-box">
+
+            <button class="mobile-back-btn"><i class="bi bi-arrow-left"></i></button>
+
+            <h4 class="main-heading"> Choose The Language </h4>
+            <p class="para">Use this section to choose the language for <br> application use</p>
+
+            <div class="input-group my-4 search-bar">
+                <input type="text" class="form-control" placeholder="Find a language. . . ." aria-label="Find a language" aria-describedby="search">
+                <span class="input-group-text" id="search"><i class="bi bi-search"></i></span>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <label class="custom-text-radio" for="english">
+                        <input type="radio" id="english" name="language" value="English" checked>
+                        English
+                        <i class="bi bi-check-circle-fill"></i>
+                    </label>
+
+                    <label class="custom-text-radio" for="hindi">
+                        <input type="radio" id="hindi" name="language" value="Hindi">
+                        हिंदी (Hindi)
+                        <i class="bi bi-check-circle-fill"></i>
+                    </label>
+
+                    <label class="custom-text-radio" for="tamil">
+                        <input type="radio" id="tamil" name="language" value="Tamil">
+                        தமிழ் (Tamil)
+                        <i class="bi bi-check-circle-fill"></i>
+                    </label>
+
+                </div>
+                <div class="col-md-6">
+                    <label class="custom-text-radio" for="kannada">
+                        <input type="radio" id="kannada" name="language" value="Kannada">
+                        ಕನ್ನಡ (Kannada)
+                        <i class="bi bi-check-circle-fill"></i>
+                    </label>
+
+                    <label class="custom-text-radio" for="malayalam">
+                        <input type="radio" id="malayalam" name="language" value="Malayalam">
+                        മലയാളം (Malayalam)
+                        <i class="bi bi-check-circle-fill"></i>
+                    </label>
+
+                    <label class="custom-text-radio" for="telugu">
+                        <input type="radio" id="telugu" name="language" value="Telugu">
+                        తెలుగు (Telugu)
+                        <i class="bi bi-check-circle-fill"></i>
+                    </label>
+
+                </div>
+            </div>
+
+            <label class="custom-text-radio mx-auto mt-0" for="marathi">
+                <input type="radio" id="marathi" name="language" value="Marathi">
+                मराठी (Marathi)
+                <i class="bi bi-check-circle-fill"></i>
+            </label>
+
+
+            <div class="text-center">
+                <button class="proceed-btn">
+                    Proceed
+                    <i class="bi bi-arrow-right-short"></i>
+                </button>
+            </div>
+
+        </section>
+
+    </main>
 
     <!---------------------- FOOTER START -------------------->
     <footer id="main-footer">

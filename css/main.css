@@ -8,12 +8,24 @@
 body {
 	font-family: "Poppins", sans-serif;
 }
+main {
+	min-height: 80vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+input,
+.btn,
+a {
+	box-shadow: none !important;
+}
 
 /* CSS VARIABLES */
 :root {
 	--color-primary: #539ebc;
 	--color-secondary: #ff9c41;
 	--color-accent: #7000ff;
+	--color-accent-2: #01c1b6;
 	--color-bg: #f1f6fa;
 	--color-light-grey: #777;
 }
@@ -62,7 +74,118 @@ body {
                    FOOTER END
 =============================================*/
 
-/* UTILITY CLASSES */
+/* Mian Contnt Box */
+.main-box {
+	background-color: var(--color-bg);
+	box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.25);
+	border-radius: 15px;
+	padding: 50px 100px;
+	margin: 80px 0;
+}
+@media screen and (max-width: 840px) {
+	.main-box {
+		padding: 30px 50px;
+	}
+}
+@media screen and (max-width: 576px) {
+	.main-box {
+		padding: 10px 20px;
+		padding-bottom: 20px;
+		margin: 0;
+		border-radius: 0;
+		box-shadow: none;
+	}
+	body {
+		background-color: var(--color-bg);
+	}
+}
+
+/* MOBILE BACK BUTTON */
+.mobile-back-btn {
+	border: none;
+	font-size: 25px;
+	padding: 6px 10px;
+	background-color: transparent;
+	margin-bottom: 20px;
+	display: none;
+}
+@media screen and (max-width: 576px) {
+	.mobile-back-btn {
+		display: block;
+	}
+}
+
+/* SEARCH BAR */
+.search-bar input {
+	border-radius: 20px;
+	border-right: none;
+	font-size: 14px;
+	color: var(--color-light-grey);
+}
+.search-bar span {
+	border-radius: 20px;
+	background-color: #fff;
+}
+.search-bar span i {
+	color: var(--color-light-grey);
+	font-size: 14px;
+}
+
+/* CUSTOM RADIO BUTTON WITH TEXT */
+.custom-text-radio {
+	padding: 6px 20px;
+	background-color: #fff;
+	color: #87ceeb;
+	border-radius: 20px;
+	margin: 14px 0;
+	width: 300px;
+	display: flex;
+	cursor: pointer;
+	-webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+		rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+	-moz-box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+		rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+		rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.custom-text-radio input[type="radio"] {
+	display: none;
+}
+.custom-text-radio i {
+	display: none;
+	margin-left: auto;
+	color: #7392ff;
+}
+
+@media screen and (max-width: 768px) {
+	.custom-text-radio {
+		width: 100%;
+	}
+}
+
+/* PROCEED BUTTON */
+.proceed-btn {
+	border: none;
+	background-color: #fff;
+	color: var(--color-accent-2);
+	font-weight: bold;
+	padding: 8px 35px;
+	margin: 20px 0;
+	border-radius: 20px;
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+		rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+/* ================== UTILITY CLASSES ================ */
 .text-14 {
 	font-size: 14px;
+	font-weight: 600;
+}
+.main-heading {
+	color: var(--color-secondary);
+}
+.para {
+	color: var(--color-primary);
+	line-height: 1.2;
+	margin: 0;
 }
