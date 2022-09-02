@@ -15,13 +15,16 @@ main {
 	justify-content: center;
 }
 input,
-.btn {
+.btn,
+select,
+.btn-close {
 	box-shadow: none !important;
 }
 
 /* CSS VARIABLES */
 :root {
 	--color-primary: #539ebc;
+	--color-primary-dark: #009b9b;
 	--color-secondary: #ff9c41;
 	--color-accent: #7000ff;
 	--color-accent-2: #01c1b6;
@@ -73,7 +76,9 @@ input,
                    FOOTER END
 =============================================*/
 
-/* =============== Mobile Auth Page Start =============== */
+/* ==============================
+ Mobile Auth Page Start 
+================================= */
 .mobile-auth {
 	min-width: 800px;
 }
@@ -194,7 +199,99 @@ input,
 	font-size: 120px;
 	color: #73ffab;
 }
-/* ==================== Mobile Auth Page End ==================== */
+/* =====================================
+		Mobile Auth Page End 
+======================================== */
+
+/* =========================================
+	 ADDRESS VERIFICATION PAGE START
+=========================================== */
+.address-box {
+	box-shadow: 0px 4px 18px rgba(140, 133, 133, 0.25);
+	background-color: #fff;
+	border: 2px solid rgba(119, 119, 119, 0.608);
+	border-radius: 15px;
+	padding: 10px 15px;
+	margin-top: 80px;
+}
+.address-para {
+	font-weight: 500;
+	margin-top: 30px !important;
+	margin-bottom: 50px !important;
+}
+
+@media screen and (min-width: 658px) {
+	.change-address-box {
+		min-width: 600px;
+	}
+}
+@media screen and (min-width: 841px) {
+	.change-address-box {
+		min-width: 800px;
+	}
+}
+@media screen and (max-width: 500px) {
+	.two-proceed-btn .proceed-btn {
+		width: 120px;
+		padding: 6px 17px;
+		font-size: 14px;
+	}
+}
+
+.staying-box select {
+	width: 130px;
+	border-radius: 50px;
+	margin: 0 7px;
+	box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1) !important;
+	color: var(--color-light-grey);
+}
+.address-check input:checked + label:after,
+.address-check label::before {
+	border-color: var(--color-primary-dark);
+}
+
+@media screen and (max-width: 300px) {
+	.staying-box select {
+		width: 115px;
+		border-radius: 50px;
+		margin: 0 5px;
+	}
+}
+
+.modal-backdrop {
+	background-color: rgb(173 173 173 / 55%);
+}
+.address-modal {
+	backdrop-filter: blur(2px);
+	border-radius: 40px;
+}
+address-modal.fade {
+	transition-duration: 100ms;
+	transition-timing-function: ease-out;
+}
+.modal .proceed-btn {
+	width: 100px;
+	padding: 6px 17px;
+	font-size: 14px;
+	font-weight: 500;
+	margin: 0;
+}
+.address-modal #postponed-days {
+	width: 80px;
+	border-radius: 50px;
+}
+
+.modal .agree-btn,
+.modal .decline-btn {
+	width: 100px;
+	padding: 6px 17px;
+	font-size: 14px;
+	font-weight: 500;
+	margin: 0;
+}
+/* =========================================
+	 ADDRESS VERIFICATION PAGE END
+=========================================== */
 
 /* Mian Contnt Box */
 .main-box {
@@ -356,6 +453,60 @@ input,
 		padding: 6px 20px;
 	}
 }
+
+/* CUSTOM RADIO BUTTON START */
+.custom-radio [type="radio"]:checked,
+.custom-radio [type="radio"]:not(:checked) {
+	position: absolute;
+	display: none;
+}
+.custom-radio [type="radio"]:checked + label,
+.custom-radio [type="radio"]:not(:checked) + label {
+	position: relative;
+	padding-left: 28px;
+	cursor: pointer;
+	line-height: 20px;
+	display: inline-block;
+	color: var(--color-primary-dark);
+	font-weight: 500;
+	font-size: 14px;
+}
+.custom-radio [type="radio"]:checked + label:before,
+.custom-radio [type="radio"]:not(:checked) + label:before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 20px;
+	height: 20px;
+	border: 3px solid var(--color-primary-dark);
+	border-radius: 100%;
+	background: #fff;
+}
+.custom-radio [type="radio"]:checked + label:after,
+.custom-radio [type="radio"]:not(:checked) + label:after {
+	content: "";
+	width: 12px;
+	height: 12px;
+	background: var(--color-primary-dark);
+	position: absolute;
+	top: 4px;
+	left: 4px;
+	border-radius: 100%;
+	-webkit-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+}
+.custom-radio [type="radio"]:not(:checked) + label:after {
+	opacity: 0;
+	-webkit-transform: scale(0);
+	transform: scale(0);
+}
+.custom-radio [type="radio"]:checked + label:after {
+	opacity: 1;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+}
+/* CUSTOM RADIO BUTTON END */
 
 /* ================== UTILITY CLASSES ================ */
 .text-14 {

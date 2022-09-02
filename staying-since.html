@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AuthBridge</title>
+
+    <!-- BOOTSTRAP CSS AND JS FILE CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
+    <!-- BOOTSTRAP ICON CDN FILE -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+    <!-- GOOGLE FONT CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CUSTOM JS FILE -->
+    <script defer src="js/main.js"></script>
+
+    <!-- CUSTOM CSS FILE -->
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <!---------------------- NAVBAR START --------------------->
+    <nav class="navbar navbar-expand-sm bg-white" id="main-navbar">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">LOGO</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Work</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!---------------------- NAVBAR END --------------------->
+
+    <main>
+        <section class="main-box change-address-box mx-sm-3">
+
+            <button class="mobile-back-btn"><i class="bi bi-arrow-left"></i></button>
+
+            <h4 class="main-heading"> Address Verification</h4>
+            <p class="para">Verify your address by confirming if the mentioned address is your's</p>
+
+            <div class="address-box mt-4">
+                <p style="color:var(--color-accent-2);" class="fw-500 text-14 m-0">Address:</p>
+                <p style="color: var(--color-accent);" class="text-14 m-0">D-23, Main Market, Sarkarpur, Delhi - 110987</p>
+            </div>
+            <p class="para my-5 fw-500" style="color: var(--color-primary-dark);">Since when you have been staying at this address?</p>
+
+
+            <div class="staying-box d-flex align-items-center flex-column">
+                <p class="para fw-500" style="color: var(--color-primary-dark);">Staying Since</p>
+                <form class="my-3">
+                    <div class="d-flex">
+                        <select class="form-select">
+                            <option selected>Month</option>
+                            <option value="January">January</option>
+                            <option value="February">February</option>
+                            <option value="March">March</option>
+                            <option value="April">April</option>
+                            <option value="May">May</option>
+                            <option value="June">June</option>
+                            <option value="July">July</option>
+                            <option value="August">August</option>
+                            <option value="September">September</option>
+                            <option value="October">October</option>
+                            <option value="November">November</option>
+                            <option value="December">December</option>
+                        </select>
+                        <select class="form-select">
+                            <option selected>Year</option>
+                            <option value="1998">1998</option>
+                            <option value="1999">1999</option>
+                            <option value="2000">2000</option>
+                            <option value="2001">2001</option>
+                            <option value="2002">2002</option>
+                            <option value="2003">2003</option>
+                            <option value="2004">2004</option>
+                            <option value="2005">2005</option>
+                            <option value="2006">2006</option>
+                            <option value="2007">2007</option>
+                            <option value="2008">2008</option>
+                            <option value="2009">2009</option>
+                            <option value="2010">2010</option>
+                            <option value="2011">2011</option>
+                            <option value="2012">2012</option>
+                            <option value="2013">2013</option>
+                            <option value="2014">2014</option>
+                            <option value="2015">2015</option>
+                            <option value="2016">2016</option>
+                            <option value="2017">2017</option>
+                            <option value="2018">2018</option>
+                            <option value="2019">2019</option>
+                            <option value="2020">2020</option>
+                            <option value="2021">2021</option>
+                            <option value="2022">2022</option>
+                        </select>
+                    </div>
+
+                    <div class="otp-group mt-3 ms-3 address-check">
+                        <input type="checkbox" id="till-day" checked>
+                        <label for="till-day" style="color:var(--color-primary-dark)">Till Day</label>
+                    </div>
+                </form>
+            </div>
+
+
+            <div class="d-flex justify-content-between two-proceed-btn">
+                <a href="address-verification.html" class="proceed-btn">
+                    <i class="bi bi-arrow-left-short"></i>
+                    <span>Back</span>
+                </a>
+                <a href="available.html" class="proceed-btn">
+                    Proceed
+                    <i class="bi bi-arrow-right-short"></i>
+                </a>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!---------------------- FOOTER START -------------------->
+    <footer id="main-footer">
+        <p class="m-0 text-14">Call us on 012 4484 6506 for your support</p>
+        <p class="m-0 text-14"> &copy; 2022. Authbridge Research Services Pvt Ltd. All rights restored</p>
+    </footer>
+    <!---------------------- FOOTER END -------------------->
+</body>
+
+</html>

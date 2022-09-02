@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AuthBridge</title>
+
+    <!-- BOOTSTRAP CSS AND JS FILE CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
+    <!-- BOOTSTRAP ICON CDN FILE -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+    <!-- GOOGLE FONT CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CUSTOM JS FILE -->
+    <script defer src="js/main.js"></script>
+
+    <!-- CUSTOM CSS FILE -->
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <!---------------------- NAVBAR START --------------------->
+    <nav class="navbar navbar-expand-sm bg-white" id="main-navbar">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">LOGO</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Work</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!---------------------- NAVBAR END --------------------->
+
+    <main>
+        <section class="main-box change-address-box mx-sm-3">
+
+            <button class="mobile-back-btn"><i class="bi bi-arrow-left"></i></button>
+
+            <h4 class="main-heading"> Address Verification</h4>
+            <p class="para">To proceed with the Digital Address verification you need to be present at the address:</p>
+
+            <div class="address-box my-5">
+                <p style="color:var(--color-accent-2);" class="fw-500 text-14 m-0">Address:</p>
+                <p style="color: var(--color-accent);" class="text-14 m-0">D-23, Main Market, Sarkarpur, Delhi - 110987</p>
+            </div>
+            <p class="para my-4 fw-500" style="color: var(--color-primary-dark);">When do you expect to be there?</p>
+
+            <div class="reason-to-change-box">
+                <form action="#">
+                    <p class="custom-radio">
+                        <input type="radio" id="postponed" name="radio-group" checked>
+                        <label for="postponed">I want to postponed the verificatio</label>
+                    </p>
+                    <p class="custom-radio">
+                        <input type="radio" id="not-available" name="radio-group">
+                        <label for="not-available">I will not be available</label>
+                    </p>
+                </form>
+            </div>
+
+            <div class="d-flex justify-content-between two-proceed-btn">
+                <a href="available.html" class="proceed-btn">
+                    <i class="bi bi-arrow-left-short"></i>
+                    <span>Back</span>
+                </a>
+                <button class="proceed-btn" data-bs-toggle="modal" data-bs-target="#how-many-days" id="address-proceed-btn">
+                    Proceed
+                    <i class="bi bi-arrow-right-short"></i>
+                </button>
+            </div>
+
+
+
+        </section>
+
+    </main>
+
+    <!---------------------- FOOTER START -------------------->
+    <footer id="main-footer">
+        <p class="m-0 text-14">Call us on 012 4484 6506 for your support</p>
+        <p class="m-0 text-14"> &copy; 2022. Authbridge Research Services Pvt Ltd. All rights restored</p>
+    </footer>
+    <!---------------------- FOOTER END -------------------->
+
+
+    <!-- How many days Modal -->
+    <div class="modal fade address-modal" id="how-many-days" tabindex="-1" aria-labelledby="how-many-daysLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content py-3 px-4" style="border-radius: 20px;">
+
+                <div class="modal-body">
+                    <p class="para fw-500 text-14" style="color: var(--color-primary-dark);">How many days you want to postponed?</p>
+
+                    <div class="d-flex justify-content-center align-items-center mt-4">
+                        <input type="number" name="days" id="postponed-days" class="form-control text-center" min="1" value="10">
+                        <span class="ms-2 fw-500 text-muted">Days</span>
+                    </div>
+                </div>
+                <div class="modal-footer border-0 justify-content-between px-0">
+                    <button class="proceed-btn" data-bs-dismiss="modal">
+                        <i class="bi bi-arrow-left-short"></i>
+                        <span>Back</span>
+                    </button>
+                    <button class="proceed-btn" data-bs-toggle="modal" data-bs-target="#thanks-modal" id="submit-postponed-days">
+                        Proceed
+                        <i class="bi bi-arrow-right-short"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Thanks Modal -->
+    <div class="modal fade address-modal" id="thanks-modal" tabindex="-1" aria-labelledby="thanks-modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content py-3 px-4" style="border-radius: 20px;">
+
+                <div class="modal-body">
+                    <p class="para fw-500 px-sm-5 py-4 text-center" style="color: var(--color-primary-dark);" id="postponed-days-text">Thanks for your input. We will get back after 10 days</p>
+                </div>
+                <div class="modal-footer border-0 justify-content-between px-0">
+                    <button class="proceed-btn" data-bs-dismiss="modal">
+                        <i class="bi bi-arrow-left-short"></i>
+                        <span>Back</span>
+                    </button>
+                    <button class="proceed-btn"> Proceed <i class="bi bi-arrow-right-short"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Nomini Modal -->
+    <div class="modal fade address-modal" id="nomini-modal" tabindex="-1" aria-labelledby="nomini-modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content py-3 px-4" style="border-radius: 20px;">
+
+                <div class="modal-body">
+                    <p class="para fw-500 px-sm-5 py-4 text-center" style="color: var(--color-primary-dark);">Would you like someone else to verify on your behalf?</p>
+                </div>
+                <div class="modal-footer border-0 justify-content-between px-0">
+                    <button class="decline-btn" data-bs-dismiss="modal">
+                        <i class="bi bi-arrow-left-short"></i>
+                        <span>No</span>
+                    </button>
+                    <a href="nomini-details.html" class="agree-btn">
+                        <span>Yes</span>
+                        <i class="bi bi-arrow-right-short"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

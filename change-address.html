@@ -58,40 +58,49 @@
     <!---------------------- NAVBAR END --------------------->
 
     <main>
-        <section class="main-box mx-sm-4 bg-white mobile-auth">
+        <section class="main-box change-address-box mx-sm-3">
 
             <button class="mobile-back-btn"><i class="bi bi-arrow-left"></i></button>
 
-            <h4 class="main-heading">Mobile Authenticatin </h4>
-            <p class="para">An OTP is generated and send to your number</p>
+            <h4 class="main-heading"> Address Verification</h4>
+            <p class="para">You choose to change the address:</p>
 
-            <div class="d-flex flex-column align-items-center justify-content-center">
-                <div class="input-group mobile-auth-fild mt-5">
-                    <span class="input-group-text" id="numberFild">
-                        <img src="images/flag_of_India.png" alt="Indian Flag" class="me-2">
-                        +91
-                    </span>
-                    <input type="tel" class="form-control" placeholder="XXX  XXX  1234" aria-describedby="numberFild">
-                </div>
+            <div class="address-box mt-3">
+                <p style="color:var(--color-accent-2);" class="fw-500 text-14 m-0">Address:</p>
+                <input type="text" class="form-control border-0" style="color: var(--color-accent);" placeholder="Enter your address">
+            </div>
+            <p class="para my-4 fw-500" style="color: var(--color-primary-dark);">Please Specify the reason for changing the address:</p>
 
-                <div class="check-mark">
-                    <i class="bi bi-check-circle-fill"></i>
-                </div>
+            <div class="reason-to-change-box">
+                <form action="#">
+                    <p class="custom-radio">
+                        <input type="radio" id="minor-error" name="radio-group" checked>
+                        <label for="minor-error">Minor error in the provided address</label>
+                    </p>
+                    <p class="custom-radio">
+                        <input type="radio" id="naver-stayed" name="radio-group">
+                        <label for="naver-stayed">Never stayed at the provided address</label>
+                    </p>
+                    <p class="custom-radio">
+                        <input type="radio" id="shifted" name="radio-group">
+                        <label for="shifted">Shifted to a new address</label>
+                    </p>
+                    <p class="custom-radio">
+                        <input type="radio" id="others" name="radio-group">
+                        <label for="others">Others</label>
+                    </p>
+                </form>
+            </div>
 
-
-                <div class="d-flex justify-content-center">
-                    <a href="address-verification.html" class="proceed-btn">
-                        Proceed
-                        <i class="bi bi-arrow-right-short"></i>
-                    </a>
-                </div>
-
-
-
-
-
-
-
+            <div class="d-flex justify-content-between two-proceed-btn">
+                <a href="address-verification.html" class="proceed-btn">
+                    <i class="bi bi-arrow-left-short"></i>
+                    <span>Back</span>
+                </a>
+                <a href="address-verification.html" class="proceed-btn">
+                    Proceed
+                    <i class="bi bi-arrow-right-short"></i>
+                </a>
             </div>
 
         </section>
