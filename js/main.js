@@ -156,42 +156,42 @@ try {
 		});
 	};
 
-	let alterClicked = false;
 	alterCamera.addEventListener("click", () => {
-		if (alterClicked === false) {
-			alterClicked = true;
-			let viedoObject = {
-				video: {
-					width: {
-						ideal: videoElement.width,
-					},
-					height: {
-						ideal: videoElement.height,
-					},
-					facingMode: {
-						exact: "environment",
-					},
+		// let alterClicked = false;
+
+		// alterClicked = true;
+		let viedoObject = {
+			video: {
+				width: {
+					ideal: videoElement.width,
 				},
-			};
-			openCamera(viedoObject);
-		}
-		if (alterClicked === true) {
-			alterClicked = false;
-			let viedoObject = {
-				video: {
-					width: {
-						ideal: videoElement.width,
-					},
-					height: {
-						ideal: videoElement.height,
-					},
-					facingMode: {
-						exact: "user",
-					},
+				height: {
+					ideal: videoElement.height,
 				},
-			};
-			openCamera(viedoObject);
-		}
+				facingMode: {
+					exact: "environment",
+				},
+			},
+		};
+		openCamera(viedoObject);
+
+		// if (alterClicked === true) {
+		// 	alterClicked = false;
+		// 	let viedoObject = {
+		// 		video: {
+		// 			width: {
+		// 				ideal: videoElement.width,
+		// 			},
+		// 			height: {
+		// 				ideal: videoElement.height,
+		// 			},
+		// 			facingMode: {
+		// 				exact: "user",
+		// 			},
+		// 		},
+		// 	};
+		// 	openCamera(viedoObject);
+		// }
 	});
 
 	retakeBtn.addEventListener("click", () => {
