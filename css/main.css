@@ -523,6 +523,26 @@ select,
 .camera-photo-preview {
 	display: none;
 }
+#alter-camera {
+	color: #7b7b7b;
+	background-color: #c4e2f7;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	border: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	right: 5px;
+}
+#alter-camera:active {
+	box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+		rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+}
+#alter-camera i {
+	font-size: 20px;
+}
 /* ========================================================
 				 VARIFICATION END
 =========================================================== */

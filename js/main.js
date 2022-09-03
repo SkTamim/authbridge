@@ -101,7 +101,6 @@ try {
 	const upload = document.getElementById("upload");
 	const replaceBtn = document.getElementById("replace-btn");
 	let retakeBtn = document.getElementById("retake-btn");
-	let alterCamera = document.querySelector("#alter-camer");
 
 	function vidOff() {
 		videoElement.pause();
@@ -156,6 +155,8 @@ try {
 		});
 	};
 
+	// ALTER CAMERA FUNCTIONALITY
+	const alterCamera = document.querySelector("#alter-camera");
 	let alterClicked = false;
 	alterCamera.addEventListener("click", () => {
 		if (alterClicked === false) {
@@ -240,8 +241,8 @@ try {
 	// DESKTOP PREVIEW IMAGE
 	upload.addEventListener("change", (event) => {
 		if (event.target.files.length > 0) {
-			var src = URL.createObjectURL(event.target.files[0]);
-			var preview = document.getElementById("file-preview");
+			let src = URL.createObjectURL(event.target.files[0]);
+			let preview = document.getElementById("file-preview");
 			preview.src = src;
 			preview.style.display = "block";
 			let previewBox = document.querySelector(".preview");

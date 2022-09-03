@@ -82,7 +82,7 @@
                 <div class="upload-img" id="upload-img">
                     <i class="bi bi-upload d-sm-block d-none"></i>
                     <i class="bi bi-camera d-sm-none d-block"></i>
-                    <input type="file" name="upload" id="upload">
+                    <input type="file" name="upload" id="upload" accept="image/*">
                     <p class="text-14 text-center text-muted d-sm-block d-none">Tap here to Upload Photo</p>
                     <p class="text-14 text-center text-muted d-sm-none d-block">Tap here to turn on the camera</p>
                 </div>
@@ -124,11 +124,13 @@
         <div id="videoBox">
             <button class="camera-back"><i class="bi bi-arrow-left"></i></button>
             <video id="videoElement" autoplay="true"></video>
-            <div class="text-center mt-2">
-                <button id="click-btn">
+            <div class="d-flex align-items-center mt-2 position-relative justify-content-center">
+                <button id="click-btn" title="Click Picture">
                     <i class="bi bi-camera"></i>
                 </button>
-                <button class="btn" id="alter-camer">R</button>
+                <button class="btn" id="alter-camera" title="Alter Camera">
+                    <i class="bi bi-arrow-repeat"></i>
+                </button>
             </div>
         </div>
 
