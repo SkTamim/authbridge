@@ -103,6 +103,15 @@ try {
 	let retakeBtn = document.getElementById("retake-btn");
 	let alterCamera = document.querySelector("#alter-camer");
 
+	function vidOff() {
+		videoElement.pause();
+		videoElement.srcObject.getVideoTracks()[0].stop();
+		videoElement.src = "";
+
+		videoBox.style.display = "none";
+		document.body.style.overflow = "auto";
+	}
+
 	// CAMERA FUNCTIONALITY FOR MOBILE
 	const openCamera = (viedoObject) => {
 		let videoBox = document.getElementById("videoBox");
@@ -126,15 +135,6 @@ try {
 				});
 		}
 
-		function vidOff() {
-			videoElement.pause();
-			videoElement.srcObject.getVideoTracks()[0].stop();
-			videoElement.src = "";
-
-			videoBox.style.display = "none";
-			document.body.style.overflow = "auto";
-		}
-
 		cameraBackBtn.addEventListener("click", () => {
 			vidOff();
 		});
@@ -156,42 +156,45 @@ try {
 		});
 	};
 
+	let alterClicked = false;
 	alterCamera.addEventListener("click", () => {
-		// let alterClicked = false;
+		if (alterClicked === false) {
+			alterClicked = true;
+			let viedoObject = {
+				video: {
+					width: {
+						ideal: videoElement.width,
+					},
+					height: {
+						ideal: videoElement.height,
+					},
+					facingMode: {
+						exact: "environment",
+					},
+				},
+			};
+			vidOff();
+			openCamera(viedoObject);
+		}
 
-		// alterClicked = true;
-		let viedoObject = {
-			video: {
-				width: {
-					ideal: videoElement.width,
+		if (alterClicked === true) {
+			alterClicked = false;
+			let viedoObject = {
+				video: {
+					width: {
+						ideal: videoElement.width,
+					},
+					height: {
+						ideal: videoElement.height,
+					},
+					facingMode: {
+						exact: "user",
+					},
 				},
-				height: {
-					ideal: videoElement.height,
-				},
-				facingMode: {
-					exact: "environment",
-				},
-			},
-		};
-		openCamera(viedoObject);
-
-		// if (alterClicked === true) {
-		// 	alterClicked = false;
-		// 	let viedoObject = {
-		// 		video: {
-		// 			width: {
-		// 				ideal: videoElement.width,
-		// 			},
-		// 			height: {
-		// 				ideal: videoElement.height,
-		// 			},
-		// 			facingMode: {
-		// 				exact: "user",
-		// 			},
-		// 		},
-		// 	};
-		// 	openCamera(viedoObject);
-		// }
+			};
+			vidOff();
+			openCamera(viedoObject);
+		}
 	});
 
 	retakeBtn.addEventListener("click", () => {
