@@ -94,3 +94,106 @@ try {
 } catch (error) {
 	console.log(error);
 }
+
+// UPOAD BUTTON WORK FUNCTIONLATY
+try {
+	const uploadImg = document.getElementById("upload-img");
+	const upload = document.getElementById("upload");
+	const replaceBtn = document.getElementById("replace-btn");
+	let retakeBtn = document.getElementById("retake-btn");
+
+	// CAMERA FUNCTIONALITY FOR MOBILE
+	const openCamera = () => {
+		let videoBox = document.getElementById("videoBox");
+		let videoElement = document.getElementById("videoElement");
+		let clickBtn = document.getElementById("click-btn");
+		let photoCanvas = document.getElementById("photo-canvas");
+		let cameraPhotoPreview = document.querySelector(".camera-photo-preview");
+		let cameraBackBtn = document.querySelector(".camera-back");
+
+		videoBox.style.display = "block";
+		document.body.style.overflow = "hidden";
+
+		if (navigator.mediaDevices.getUserMedia) {
+			navigator.mediaDevices
+				.getUserMedia({
+					video: {
+						width: {
+							ideal: photoCanvas.width,
+						},
+						height: {
+							ideal: photoCanvas.height,
+						},
+					},
+				})
+				.then((stream) => {
+					videoElement.srcObject = stream;
+				})
+				.catch((err) => {
+					console.log(err);
+				});
+		}
+
+		function vidOff() {
+			videoElement.pause();
+			videoElement.srcObject.getVideoTracks()[0].stop();
+			videoElement.src = "";
+
+			videoBox.style.display = "none";
+			document.body.style.overflow = "auto";
+		}
+
+		cameraBackBtn.addEventListener("click", () => {
+			vidOff();
+		});
+
+		clickBtn.addEventListener("click", () => {
+			let context = photoCanvas.getContext("2d");
+
+			context.drawImage(
+				videoElement,
+				0,
+				0,
+				photoCanvas.width,
+				photoCanvas.height
+			);
+			uploadImg.style.display = "none";
+			cameraPhotoPreview.style.display = "block";
+
+			vidOff();
+		});
+	};
+
+	retakeBtn.addEventListener("click", () => {
+		openCamera();
+	});
+
+	uploadImg.addEventListener("click", () => {
+		if (window.innerWidth >= 576) {
+			upload.click();
+		} else {
+			openCamera();
+		}
+	});
+
+	// DESKTOP PREVIEW IMAGE
+	upload.addEventListener("change", (event) => {
+		if (event.target.files.length > 0) {
+			var src = URL.createObjectURL(event.target.files[0]);
+			var preview = document.getElementById("file-preview");
+			preview.src = src;
+			preview.style.display = "block";
+			let previewBox = document.querySelector(".preview");
+			previewBox.style.display = "block";
+			uploadImg.style.display = "none";
+		}
+	});
+
+	replaceBtn.addEventListener("click", () => {
+		if (window.innerWidth >= 576) {
+			upload.click();
+		}
+	});
+} catch (err) {
+	console.log(err);
+}

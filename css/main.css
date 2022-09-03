@@ -369,6 +369,160 @@ select,
 		margin-right: 0;
 	}
 }
+
+.step-heading {
+	color: var(--color-secondary);
+	margin-top: 60px;
+}
+.step-heading h6 {
+	margin: 0;
+	margin-left: 20px;
+}
+.step-heading img {
+	height: 40px;
+}
+
+.upload-box {
+	min-height: 250px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.upload-img {
+	border: 2px dashed var(--color-light-grey);
+	border-radius: 20px;
+	height: 150px;
+	width: 220px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 10px;
+	cursor: pointer;
+}
+.upload-img i {
+	font-size: 30px;
+	color: #87ceeb;
+}
+.upload-img input {
+	display: none;
+}
+
+/* Progress step */
+.progress-step {
+	position: relative;
+}
+.progress-step .progress-container {
+	width: 270px;
+	position: absolute;
+	z-index: 1;
+}
+.progressbar li {
+	float: left;
+	width: 20%;
+	position: relative;
+	text-align: center;
+	list-style: none;
+}
+.progressbar li:before {
+	content: "";
+	width: 30px;
+	height: 30px;
+}
+.progressbar li:before {
+	content: "";
+	width: 15px;
+	height: 15px;
+	border: 5px solid #dadada;
+	display: block;
+	margin: 0 auto 10px auto;
+	border-radius: 50%;
+	background: white;
+}
+
+.progressbar li:after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	background: #dadada;
+	top: 7px;
+	left: -50%;
+	z-index: -1;
+}
+.progressbar li:first-child:after {
+	content: none;
+}
+.progressbar li.active:before {
+	background: #30e542;
+	outline: 2px solid #30e542;
+	border: 2px solid #fff;
+}
+.progressbar li.active:after {
+	background: #30e542;
+}
+
+.preview {
+	display: none;
+}
+.preview img {
+	max-width: 300px;
+	max-height: 400px;
+}
+@media screen and (max-width: 330px) {
+	.preview img {
+		max-width: 200px;
+		max-height: 300px;
+	}
+}
+#videoBox {
+	display: none;
+	background-color: #fff;
+	padding: 8px 15px;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	z-index: 20;
+}
+.camera-back {
+	border: none;
+	padding: 6px 13px;
+	font-size: 20px;
+	background-color: transparent;
+}
+#click-btn {
+	color: #808080;
+	background-color: #dadada;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	border: none;
+}
+#click-btn:active {
+	box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+		rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+	background-color: #e6e5e5;
+}
+#click-btn i {
+	font-size: 25px;
+}
+#videoElement {
+	background-color: #dadada;
+	width: 100%;
+	height: 75vh;
+	border-radius: 20px;
+}
+#photo-canvas {
+	max-width: 200px;
+	min-height: 150px;
+	max-height: 300px;
+}
+.camera-photo-preview {
+	display: none;
+}
 /* ========================================================
 				 VARIFICATION END
 =========================================================== */
