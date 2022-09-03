@@ -110,22 +110,28 @@ try {
 		let photoCanvas = document.getElementById("photo-canvas");
 		let cameraPhotoPreview = document.querySelector(".camera-photo-preview");
 		let cameraBackBtn = document.querySelector(".camera-back");
+		let alterCamera = document.querySelector("#alter-camer");
 
 		videoBox.style.display = "block";
 		document.body.style.overflow = "hidden";
 
 		if (navigator.mediaDevices.getUserMedia) {
-			navigator.mediaDevices
-				.getUserMedia({
-					video: {
-						width: {
-							ideal: photoCanvas.width,
-						},
-						height: {
-							ideal: photoCanvas.height,
-						},
+			let viedoObject = {
+				video: {
+					width: {
+						ideal: photoCanvas.width,
 					},
-				})
+					height: {
+						ideal: photoCanvas.height,
+					},
+					facingMode: {
+						exact: "environment",
+					},
+				},
+			};
+
+			navigator.mediaDevices
+				.getUserMedia(viedoObject)
 				.then((stream) => {
 					videoElement.srcObject = stream;
 				})
