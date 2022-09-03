@@ -518,7 +518,7 @@ select,
 #photo-canvas {
 	max-width: 200px;
 	min-height: 150px;
-	max-height: 300px;
+	height: 300px;
 }
 .camera-photo-preview {
 	display: none;
