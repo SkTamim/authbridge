@@ -101,35 +101,21 @@ try {
 	const upload = document.getElementById("upload");
 	const replaceBtn = document.getElementById("replace-btn");
 	let retakeBtn = document.getElementById("retake-btn");
+	let alterCamera = document.querySelector("#alter-camer");
 
 	// CAMERA FUNCTIONALITY FOR MOBILE
-	const openCamera = () => {
+	const openCamera = (viedoObject) => {
 		let videoBox = document.getElementById("videoBox");
 		let videoElement = document.getElementById("videoElement");
 		let clickBtn = document.getElementById("click-btn");
 		let photoCanvas = document.getElementById("photo-canvas");
 		let cameraPhotoPreview = document.querySelector(".camera-photo-preview");
 		let cameraBackBtn = document.querySelector(".camera-back");
-		let alterCamera = document.querySelector("#alter-camer");
 
 		videoBox.style.display = "block";
 		document.body.style.overflow = "hidden";
 
 		if (navigator.mediaDevices.getUserMedia) {
-			let viedoObject = {
-				video: {
-					width: {
-						ideal: photoCanvas.width,
-					},
-					height: {
-						ideal: photoCanvas.height,
-					},
-					facingMode: {
-						exact: "environment",
-					},
-				},
-			};
-
 			navigator.mediaDevices
 				.getUserMedia(viedoObject)
 				.then((stream) => {
@@ -170,15 +156,81 @@ try {
 		});
 	};
 
+	let alterClicked = false;
+	alterCamera.addEventListener("click", () => {
+		if (alterClicked === false) {
+			alterClicked = true;
+			let viedoObject = {
+				video: {
+					width: {
+						ideal: videoElement.width,
+					},
+					height: {
+						ideal: videoElement.height,
+					},
+					facingMode: {
+						exact: "environment",
+					},
+				},
+			};
+			openCamera(viedoObject);
+		}
+		if (alterClicked === true) {
+			alterClicked = false;
+			let viedoObject = {
+				video: {
+					width: {
+						ideal: videoElement.width,
+					},
+					height: {
+						ideal: videoElement.height,
+					},
+					facingMode: {
+						exact: "user",
+					},
+				},
+			};
+			openCamera(viedoObject);
+		}
+	});
+
 	retakeBtn.addEventListener("click", () => {
-		openCamera();
+		let viedoObject = {
+			video: {
+				width: {
+					ideal: videoElement.width,
+				},
+				height: {
+					ideal: videoElement.height,
+				},
+				facingMode: {
+					exact: "user",
+				},
+			},
+		};
+
+		openCamera(viedoObject);
 	});
 
 	uploadImg.addEventListener("click", () => {
 		if (window.innerWidth >= 576) {
 			upload.click();
 		} else {
-			openCamera();
+			let viedoObject = {
+				video: {
+					width: {
+						ideal: videoElement.width,
+					},
+					height: {
+						ideal: videoElement.height,
+					},
+					facingMode: {
+						exact: "user",
+					},
+				},
+			};
+
+			openCamera(viedoObject);
 		}
 	});
 
